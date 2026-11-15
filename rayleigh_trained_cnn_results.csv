@@ -1,0 +1,2 @@
+Model,Training_Channel,Testing_Channel,Threshold,Accuracy,Pd,Pfa,Pm,ROC_AUC
+Rayleigh-trained 1D-CNN,Rayleigh,Rayleigh,0.60463464,0.65,0.3514285714285714,0.05142857142857143,0.6485714285714286,0.7613650793650792
