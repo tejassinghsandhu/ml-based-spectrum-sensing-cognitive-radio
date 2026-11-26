@@ -33,22 +33,9 @@ Conventional **Energy Detection (ED)** degrades significantly under low signal-t
 
 ## System Architecture
 
-```mermaid
-flowchart TD
-    A["Signal Generation (QPSK)"] --> B["Channel Modelling"]
-    B --> C["AWGN & Rayleigh Fading"]
-    C --> D["Dataset & Feature Extraction"]
-    D --> E["Stratified Train / Val / Test Split"]
-    E --> F["Energy Detection"]
-    E --> G["Logistic Regression"]
-    E --> H["Random Forest"]
-    E --> I["1D-CNN (Raw I/Q)"]
-    F --> J["Evaluation (Pd, Pfa, Pm, Acc, ROC-AUC)"]
-    G --> J
-    H --> J
-    I --> J
-    J --> K["Multi-Seed Statistical Validation"]
-```
+<p align="center">
+  <img src="system_architecture.svg" alt="System Architecture Flowchart" width="640">
+</p>
 
 ---
 
