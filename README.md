@@ -27,7 +27,7 @@ Conventional **Energy Detection (ED)** degrades significantly under low signal-t
 - **Energy Detection (ED):** Conventional threshold-based baseline comparing received signal energy against a calibrated threshold.
 - **Logistic Regression (LR):** Linear supervised classifier trained on extracted statistical and spectral features.
 - **Random Forest (RF):** Ensemble decision-tree classifier trained on extracted statistical and spectral features.
-- **1D Convolutional Neural Network (1D-CNN):** Deep-learning model operating directly on raw in-phase and quadrature ($I/Q$) samples using convolutional layers, max pooling, global average pooling, a dense layer, and a sigmoid output.
+- **1D Convolutional Neural Network (1D-CNN):** Deep-learning model operating directly on raw in-phase and quadrature (I/Q) samples using convolutional layers, max pooling, global average pooling, a dense layer, and a sigmoid output.
 
 ---
 
@@ -68,13 +68,13 @@ All experiments use synthetically generated complex-valued communication signals
 
 ## Experimental Results
 
-Models are evaluated using **Accuracy**, **Probability of Detection ($P_d$)**, **Probability of False Alarm ($P_{fa}$)**, **Probability of Miss ($P_m$)**, and **ROC-AUC**.
+Models are evaluated using **Accuracy**, **Probability of Detection (P<sub>d</sub>)**, **Probability of False Alarm (P<sub>fa</sub>)**, **Probability of Miss (P<sub>m</sub>)**, and **ROC-AUC**.
 
 The tables below report **mean ± standard deviation** across **10 stratified train-validation-test splits** of the same synthetic dataset.
 
 ### AWGN Channel
 
-| Model | Accuracy | $P_d$ | $P_{fa}$ | ROC-AUC |
+| Model | Accuracy | P<sub>d</sub> | P<sub>fa</sub> | ROC-AUC |
 | :--- | :---: | :---: | :---: | :---: |
 | **Logistic Regression** | 67.21 ± 0.77% | 39.32 ± 1.59% | 4.90 ± 0.42% | 0.8330 ± 0.0058 |
 | **Random Forest** | **82.40 ± 0.40%** | **69.34 ± 1.02%** | 4.53 ± 0.73% | **0.9400 ± 0.0027** |
@@ -82,7 +82,7 @@ The tables below report **mean ± standard deviation** across **10 stratified tr
 
 ### Rayleigh Fading Channel
 
-| Model | Accuracy | $P_d$ | $P_{fa}$ | ROC-AUC |
+| Model | Accuracy | P<sub>d</sub> | P<sub>fa</sub> | ROC-AUC |
 | :--- | :---: | :---: | :---: | :---: |
 | **Logistic Regression** | 64.18 ± 0.75% | 33.39 ± 1.43% | 5.04 ± 0.82% | 0.7550 ± 0.0060 |
 | **Random Forest** | **77.23 ± 0.34%** | **59.45 ± 1.10%** | 4.99 ± 0.76% | **0.8819 ± 0.0031** |
@@ -96,7 +96,7 @@ The tables below report **mean ± standard deviation** across **10 stratified tr
 ### Key Findings
 
 - **Random Forest** achieved the strongest overall performance across both AWGN (`0.9400` ROC-AUC) and Rayleigh fading (`0.8819` ROC-AUC).
-- **1D-CNN** delivered competitive ROC-AUC under AWGN (`0.8979`), operating with a lower false-alarm rate (`1.23%`) than the nominal `5%` target and a correspondingly lower $P_d$.
+- **1D-CNN** delivered competitive ROC-AUC under AWGN (`0.8979`), operating with a lower false-alarm rate (`1.23%`) than the nominal `5%` target and a correspondingly lower P<sub>d</sub>.
 - **Rayleigh fading** degraded detection performance across all evaluated ML models compared to AWGN.
 - **Logistic Regression** showed the lowest overall detection capability among the ML models.
 
